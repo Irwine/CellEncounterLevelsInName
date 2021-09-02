@@ -8,6 +8,7 @@ using Noggog;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text;
 
 namespace CellEncounterLevelsInName
 {
@@ -116,6 +117,10 @@ namespace CellEncounterLevelsInName
                 if (encounterZone is null) continue;
 
                 string cellName = cell.Name.String;
+                string i18nCellName = "";
+                cell.Name.TryLookup(Language.French, out i18nCellName);
+                cellName = i18nCellName ?? cellName;
+                
                 sbyte minLevel = encounterZone.MinLevel;
                 sbyte maxLevel = encounterZone.MaxLevel;
 
@@ -166,6 +171,12 @@ namespace CellEncounterLevelsInName
                     if (mapMarkerName is null) continue;
                     if (!markerContexts.Value.TryGetValue(placedObject.FormKey, out var matchingContext)) continue;
 
+                    string i18nMapMarkerName = "";
+                    placedObject.MapMarker.Name.TryLookup(Language.French, out i18nMapMarkerName);
+                    if (i18nMapMarkerName != null) {
+                        i18nMapMarkerName = Encoding.GetEncoding("ISO-8859-1").GetString(Encoding.UTF8.GetBytes(i18nMapMarkerName));
+                        mapMarkerName = i18nMapMarkerName;
+                    }
                     sbyte minLevel = 127;
                     sbyte maxLevel = -128;
                     foreach (var encounterZone in encounterZoneSet)
