@@ -19,4 +19,4 @@ Default Configuration file:
 }
 ```
 ### Version à utiliser :
-0.31 et 0.19.3
+0.30.4 et 0.19.2
