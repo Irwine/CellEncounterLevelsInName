@@ -174,7 +174,7 @@ namespace CellEncounterLevelsInName
                     string i18nMapMarkerName = "";
                     placedObject.MapMarker.Name.TryLookup(Language.French, out i18nMapMarkerName);
                     if (i18nMapMarkerName != null) {
-                        i18nMapMarkerName = Encoding.GetEncoding("ISO-8859-1").GetString(Encoding.UTF8.GetBytes(i18nMapMarkerName));
+                        //i18nMapMarkerName = Encoding.GetEncoding("ISO-8859-1").GetString(Encoding.UTF8.GetBytes(i18nMapMarkerName));
                         mapMarkerName = i18nMapMarkerName;
                     }
                     sbyte minLevel = 127;
