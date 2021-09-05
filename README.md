@@ -1,21 +1,21 @@
 # Cell Encounter Levels In Name
 
-Finds the Encounter Zone minimum and maximum levels and patches them into the cell names based on the template specified. Corresponding Map Markers will also be patched to reflect the changes (this can be toggled off if needed)
+Trouve les niveaux minimum et maximum des zones et les ajoute aux noms des cellules en fonction du modèle spécifié. Les marqueurs de carte correspondants seront également modifiés pour refléter ces changements (ceci est désactivé de base).
 
-Configuration file (Data/config.json)
+## Fichier de configuration (Data/config.json)
 
-- formulaRangedLeveled : Used when encounter zone max level > min level.
-- formulaDeleveled : Used when min and max level of the encounter zone is the same.
-- formulaLeveled : Used when minimum level is more than max level. This usually happens when max level is unspecified (0)
-- patchMapMarkers : Indicate if Map Markers should be patched as well. (true/false)
+- formulaRangedLeveled : Utilisé lorsque pour une zone le niveau maximum > au niveau minimum.
+- formulaDeleveled : Utilisé lorsque les niveaux minimum et maximum d'une zone sont identiques.
+- formulaLeveled : Utilisé lorsque le niveau minimum > au niveau maximum. Cela se produit généralement lorsque le niveau maximum n'est pas spécifié (0).
+- patchMapMarkers : Indique si les marqueurs de carte doivent également être modifiés. (true/false).
 
-Default Configuration file:
+## Fichier de configuration par défaut :
 ```
 {
     "formulaRangedLeveled" : "{name} ({min} ~ {max})",
     "formulaDeleveled": "{name} ({min})",
     "formulaLeveled": "{name} ({min}+)",
-    "patchMapMarkers": true
+    "patchMapMarkers": false
 }
 ```
 ### Version à utiliser :
