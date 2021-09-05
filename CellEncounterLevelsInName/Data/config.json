@@ -1,6 +1,19 @@
+using Mutagen.Bethesda.Synthesis.Settings;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CellEncounterLevelsInName
 {
-    "formulaRangedLeveled" : "{name} ({min} ~ {max})",
-    "formulaDeleveled": "{name} ({min})",
-    "formulaLeveled": "{name} ({min}+)",
-    "patchMapMarkers": false
+    public class Config
+ 
+    {
+    public string formulaRangedLeveled { get; set; } = "{name} ({min} ~ {max})";
+    public string formulaDeleveled { get; set; } = "{name} ({min})";
+    public string formulaLeveled { get; set; } = "{name} ({min}+)";
+    [SynthesisOrder]
+        public bool patchMapMarkers = false;
+    }
 }
