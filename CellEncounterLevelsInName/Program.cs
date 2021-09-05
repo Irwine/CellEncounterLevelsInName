@@ -14,7 +14,7 @@ namespace CellEncounterLevelsInName
 {
     public static class Program
     {
-        static Lazy<Config> _Settings = null!;
+        static Lazy<Settings> _Settings = null!;
         public static Task<int> Main(string[] args)
         {
             return SynthesisPipeline.Instance
